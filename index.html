@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Booking Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="AYUSH SHIVAM Logo">
+        </div>
+        <div class="user-options">
+            <button class="login-btn" onclick="toggleLoginModal()">Login or Create Account</button>
+            <div class="dropdown-toggle" onclick="toggleDropdown()">
+                <span class="dropdown-select">IN | ENG</span>
+            </div>
+            <div id="languageDropdown" class="dropdown-container">
+                <label>Country/Region</label>
+                <select>
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                </select>
+                <label>Language</label>
+                <select>
+                    <option>English</option>
+                    <option>Hindi</option>
+                </select>
+                <button onclick="applySelection()">APPLY</button>
+            </div>
+            <select class="currency">
+                <option>INR</option>
+                <option>USD(₹ 83.00)</option>
+                <option>EUR(₹ 90.00)</option>
+                <option>GBP(₹ 105.00)</option>
+                <option>AUD(₹ 55.00)</option>
+                <option>CAD(₹ 60.00)</option>
+                <option>JPY(₹ 0.60)</option>
+                <option>CNY(₹ 11.50)</option>
+                <option>AED(₹ 22.60)</option>
+                <option>SGD(₹ 61.00)</option>
+            </select>
+        </div>
+    </header>
+    
+
+    <!-- Flight Booking Section -->
+    <section class="booking-section">
+        <!-- Navigation Menu -->
+        <div class="booking-nav">
+            <div class="booking-option" onclick="showBookingForm('flight')">
+                ✈️ Flights
+            </div>
+            <div class="booking-option" onclick="showBookingForm('hotel')">
+                🏨 Hotels
+            </div>
+            <div class="booking-option" onclick="showBookingForm('homestay')">
+                🏡 Homestays & Villas
+            </div>
+            <div class="booking-option" onclick="showBookingForm('package')">
+                🎁 Holiday Packages
+            </div>
+            <div class="booking-option" onclick="showBookingForm('train')">
+                🚆 Train
+            </div>
+            <div class="booking-option" onclick="showBookingForm('bus')">
+                🚌 Bus
+            </div>
+            <div class="booking-option" onclick="showBookingForm('cab')">
+                🚖 Cabs
+            </div>
+            <div class="booking-option" onclick="showBookingForm('insurance')">
+                🛡️ Travel Insurance
+            </div>
+        </div>
+    
+        <!-- Booking Form Section -->
+        <section class="flight-booking">
+            <h2 id="booking-title">Book International and Domestic Flights</h2>
+            <div id="booking-form">
+                <!-- Flight booking form (default) -->
+                <form id="flight-form" class="form-container">
+                    <div class="form-group">
+                        <label for="from">From:</label>
+                        <input type="text" id="from" placeholder="Enter departure city" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="to">To:</label>
+                        <input type="text" id="to" placeholder="Enter destination city" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="departure">Departure:</label>
+                        <input type="date" id="departure" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="travellers">Travellers:</label>
+                        <input type="number" id="travellers" min="1" value="1" required>
+                    </div>
+    
+                    <button type="submit" class="search-button">SEARCH</button>
+                </form>
+            </div>
+        </section>
+    </section>
+    
+
+    <!-- Handpicked Collections Section -->
+    <section class="collections">
+        <h2>Handpicked Collections for You</h2>
+        <div class="collection-container" id="collection-container">
+            <div class="collection-item">
+                <img src="https://source.unsplash.com/300x250/?delhi,travel" alt="Delhi">
+                <div class="collection-title">Stays in & Around Delhi</div>
+            </div>
+            <div class="collection-item">
+                <img src="https://source.unsplash.com/300x250/?mumbai,travel" alt="Mumbai">
+                <div class="collection-title">Stays in & Around Mumbai</div>
+            </div>
+            <div class="collection-item">
+                <img src="https://source.unsplash.com/300x250/?bangalore,travel" alt="Bangalore">
+                <div class="collection-title">Stays in & Around Bangalore</div>
+            </div>
+            <div class="collection-item">
+                <img src="https://source.unsplash.com/300x250/?beach,travel" alt="Beach">
+                <div class="collection-title">Beach Destinations</div>
+            </div>
+            <div class="collection-item">
+                <img src="https://source.unsplash.com/300x250/?weekend,getaway" alt="Weekend">
+                <div class="collection-title">Weekend Getaways</div>
+            </div>
+            <div class="collection-item">
+                <img src="https://source.unsplash.com/300x250/?delhi,travel" alt="Delhi">
+                <div class="collection-title">Stays in & Around Delhi</div>
+            </div>
+            <div class="collection-item">
+                <img src="https://source.unsplash.com/300x250/?mumbai,travel" alt="Mumbai">
+                <div class="collection-title">Stays in & Around Mumbai</div>
+            </div>
+            <div class="collection-item">
+                <img src="https://source.unsplash.com/300x250/?bangalore,travel" alt="Bangalore">
+                <div class="collection-title">Stays in & Around Bangalore</div>
+            </div>
+            <div class="collection-item">
+                <img src="https://source.unsplash.com/300x250/?beach,travel" alt="Beach">
+                <div class="collection-title">Beach Destinations</div>
+            </div>
+            <div class="collection-item">
+                <img src="https://source.unsplash.com/300x250/?weekend,getaway" alt="Weekend">
+                <div class="collection-title">Weekend Getaways</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unlock Lesser-Known Wonders Section -->
+    <section class="wonders">
+        <h2>Unlock Lesser-Known Wonders of India</h2>
+        <div class="wonder-container" id="wonder-container">
+            <div class="wonder-item">
+                <img src="https://source.unsplash.com/300x250/?wonder1,india" alt="Wonder 1">
+                <div class="wonder-title">Wonder 1</div>
+            </div>
+            <div class="wonder-item">
+                <img src="https://source.unsplash.com/300x250/?wonder2,india" alt="Wonder 2">
+                <div class="wonder-title">Wonder 2</div>
+            </div>
+            <div class="wonder-item">
+                <img src="https://source.unsplash.com/300x250/?wonder3,india" alt="Wonder 3">
+                <div class="wonder-title">Wonder 3</div>
+            </div>
+            <div class="wonder-item">
+                <img src="https://source.unsplash.com/300x250/?wonder4,india" alt="Wonder 4">
+                <div class="wonder-title">Wonder 4</div>
+            </div>
+            <div class="wonder-item">
+                <img src="https://source.unsplash.com/300x250/?wonder1,india" alt="Wonder 1">
+                <div class="wonder-title">Wonder 1</div>
+            </div>
+            <div class="wonder-item">
+                <img src="https://source.unsplash.com/300x250/?wonder2,india" alt="Wonder 2">
+                <div class="wonder-title">Wonder 2</div>
+            </div>
+            <div class="wonder-item">
+                <img src="https://source.unsplash.com/300x250/?wonder3,india" alt="Wonder 3">
+                <div class="wonder-title">Wonder 3</div>
+            </div>
+            <div class="wonder-item">
+                <img src="https://source.unsplash.com/300x250/?wonder4,india" alt="Wonder 4">
+                <div class="wonder-title">Wonder 4</div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-box">
+                <h3>Why AYUSH SHIVAM?</h3>
+                <p>Established in 2000, AYUSH SHIVAM has positioned itself as a leading travel booking platform...</p>
+            </div>
+            <div class="footer-box">
+                <h3>Booking Flights with MakeMyTrip</h3>
+                <p>Find the best deals and cheapest air tickets to any place you want...</p>
+            </div>
+            <div class="footer-box">
+                <h3>Domestic Flights with MakeMyTrip</h3>
+                <p>India's leading player for flight bookings with the lowest prices...</p>
+            </div>
+        </div>
+        <p>&copy; 2025 AYUSH SHIVAM PVT. LTD. | Country: <strong>India USA UAE</strong></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
